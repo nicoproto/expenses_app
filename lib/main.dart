@@ -18,10 +18,12 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.amber[500],
         fontFamily: 'Lato',
         textTheme: ThemeData.light().textTheme.copyWith(
-            title: TextStyle(
-                fontFamily: 'Roboto',
-                fontWeight: FontWeight.w700,
-                fontSize: 18)),
+              title: TextStyle(
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18),
+              button: TextStyle(color: Colors.white),
+            ),
         appBarTheme: AppBarTheme(
             textTheme: ThemeData.light().textTheme.copyWith(
                 title: TextStyle(
