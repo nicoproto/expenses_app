@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
             _showChart
                 ? Container(
-                    height: (MediaQuery.of(context).size.height * 0.3 -
+                    height: (MediaQuery.of(context).size.height * 0.7 -
                         appBar.preferredSize.height -
                         MediaQuery.of(context).padding.top),
                     child: Chart(_recentTransactions))
