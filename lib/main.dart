@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
         errorColor: Colors.red,
         fontFamily: 'Lato',
         textTheme: ThemeData.light().textTheme.copyWith(
+              // ignore: deprecated_member_use
               title: TextStyle(
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w700,
@@ -88,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _startAddNewTransaction(BuildContext ctx) {
+    print("object");
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
@@ -114,7 +116,9 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 GestureDetector(
                   onTap: () => _startAddNewTransaction(context),
-                  child: Icon(CupertinoIcons.add),
+                  child: Icon(
+                    CupertinoIcons.add,
+                  ),
                 )
               ],
             ),
@@ -147,9 +151,14 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           if (_isLandscape)
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-              Text('Show chart'),
+              Text(
+                'Show chart',
+                style: Theme.of(context).textTheme.title,
+              ),
               Switch.adaptive(
-                  activeColor: Theme.of(context).primaryColor,
+                  activeColor: Platform.isIOS
+                      ? CupertinoTheme.of(context).primaryColor
+                      : Theme.of(context).primaryColor,
                   value: _showChart,
                   onChanged: (val) {
                     setState(() {
