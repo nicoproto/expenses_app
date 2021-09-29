@@ -195,14 +195,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ..._buildLandscapeContent(mediaQuery, appBar, txListWidget),
           if (!_isLandscape)
             ..._buildPortraitContent(mediaQuery, appBar, txListWidget),
-          if (_isLandscape)
-            _showChart
-                ? Container(
-                    height: (mediaQuery.size.height * 0.7 -
-                        appBar.preferredSize.height -
-                        mediaQuery.padding.top),
-                    child: Chart(_recentTransactions))
-                : txListWidget
         ],
       ),
     ));
