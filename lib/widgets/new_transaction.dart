@@ -10,10 +10,15 @@ import './adaptive_flat_button.dart';
 class NewTransaction extends StatefulWidget {
   final Function _addNewTransaction;
 
-  NewTransaction(this._addNewTransaction);
+  NewTransaction(this._addNewTransaction) {
+    print("👉🏻 constructor NewTransactionWidget");
+  }
 
   @override
-  _NewTransactionState createState() => _NewTransactionState();
+  _NewTransactionState createState() {
+    print("👉🏻 createState NewTransactionWidget");
+    return _NewTransactionState();
+  }
 }
 
 class _NewTransactionState extends State<NewTransaction> {
@@ -21,6 +26,10 @@ class _NewTransactionState extends State<NewTransaction> {
   final _amountController = TextEditingController();
 
   DateTime _selectedDate;
+
+  _NewTransactionState() {
+    print('🚨 constructor NewTransactionState');
+  }
 
   void _submitData() {
     if (_amountController.text.isEmpty) {
@@ -54,6 +63,23 @@ class _NewTransactionState extends State<NewTransaction> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    print('🚨 initState NewTransactionState');
+  }
+
+  @override
+  void didUpdateWidget(NewTransaction oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('🚨 didUpdateWidget NewTransactionState');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('🚨 dispose NewTransactionState');
+  }
+
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Card(
