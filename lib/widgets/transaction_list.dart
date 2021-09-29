@@ -34,14 +34,14 @@ class TransactionList extends StatelessWidget {
         : ListView.builder(
             itemBuilder: (context, index) {
               return Card(
-                margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                 elevation: 5,
                 child: ListTile(
                   leading: CircleAvatar(
                       radius: 30,
                       backgroundColor: Colors.orange,
                       child: Padding(
-                        padding: EdgeInsets.all(6),
+                        padding: const EdgeInsets.all(6),
                         child: FittedBox(
                             child: Text(
                           '\$ ${transactions[index].amount}',
@@ -59,9 +59,9 @@ class TransactionList extends StatelessWidget {
                       ? FlatButton.icon(
                           onPressed: () =>
                               deleteTransaction(transactions[index].id),
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           textColor: Theme.of(context).errorColor,
-                          label: Text('Delete'))
+                          label: const Text('Delete'))
                       : IconButton(
                           icon: Icon(Icons.delete,
                               color: Theme.of(context).errorColor),
